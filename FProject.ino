@@ -14,3 +14,8 @@ void setup() {
   Serial.begin(9600);
   wifiClient_Setup();
 }
+
+void loop() {
+  BTN_Pressing();
+
+}
