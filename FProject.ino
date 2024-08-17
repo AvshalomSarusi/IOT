@@ -35,3 +35,26 @@ void BTN_Pressing(){
   Serial.println(totalTime);
   }
 }
+
+void saveLastTeenPressed(){
+  Serial.print("idx: ");
+  Serial.println(idx);
+  lastPresses[idx] = totalTime;
+  idx++;
+  if(idx >= 10){
+    idx=0;
+    arrayIsFull = true;
+  }
+  if(arrayIsFull){
+    int bestTime = 10000;
+    for(int i=0;i<9;i++){
+      if(lastPresses[i]<bestTime){
+        bestTime=lastPresses[i];
+      }
+    }
+    arrayIsFull=false;
+    Serial.print("best time: ");
+    Serial.println(bestTime);
+    SendData(bestTime);
+  }
+}
