@@ -5,3 +5,6 @@
 
 const char* ssid = "Avshalom";
 const char* pswd = "200492262";
+
+WiFiClient client;
+int server_port = 80;//http
