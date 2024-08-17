@@ -7,3 +7,10 @@ unsigned long totalTime;            //משתנה לשמירת הפרש הזמן 
 unsigned long lastPresses[10];      // מערך לשמירת 10 הלחיצות האחרונות
 int idx = 0;
 bool arrayIsFull = false;       // משתנה לשמירת מצב הביצועים
+
+void setup() {
+  pinMode(buttonPin,INPUT_PULLUP);
+  pinMode(pinLed,OUTPUT);
+  Serial.begin(9600);
+  wifiClient_Setup();
+}
