@@ -3,3 +3,5 @@
 #include <WiFiUdp.h>
 #include <ESP8266HTTPClient.h>
 
+const char* ssid = "Avshalom";
+const char* pswd = "200492262";
