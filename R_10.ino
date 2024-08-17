@@ -37,3 +37,14 @@ int GetData() {
 
   return ret;
 }
+
+void SendData(unsigned long val) {
+  HTTPClient http;
+  String dataURL = "http://api.kits4.me/GEN/api.php?ACT=SET&DEV=1121&CH=1&VAL="; 
+  dataURL += String(val);
+
+  http.begin(client, dataURL);
+  int httpCode = http.GET();
+  Serial.println(httpCode);
+  http.end(); 
+}
