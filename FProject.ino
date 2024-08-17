@@ -19,3 +19,19 @@ void loop() {
   BTN_Pressing();
 
 }
+
+void BTN_Pressing(){
+  if(digitalRead(buttonPin)==LOW){
+    startTime = millis();
+    digitalWrite(pinLed,HIGH);
+    Serial.println("is pressing");
+  while(digitalRead(buttonPin)==LOW);
+  delay(50);
+  digitalWrite(pinLed,LOW);
+  endTime = millis();
+  totalTime = endTime - startTime;
+  saveLastTeenPressed();
+  Serial.print("Total time is: ");
+  Serial.println(totalTime);
+  }
+}
